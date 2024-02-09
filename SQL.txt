@@ -1,0 +1,2 @@
+CREATE VIEW blogdetailview AS SELECT b.id,b.title, b.content,b.timePosted,u.name AS author FROM blog b, users u WHERE b.postedBy=u.id;
+CREATE VIEW commentsView AS SELECT c.id,b.id AS blog_id,b.title AS blog_title, c.timePosted,u.name,u.email,u.type FROM blog b, users u, comments c WHERE b.id=c.blogId AND c.postedBy=u.id;

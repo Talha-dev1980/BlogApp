@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const db = require('../config');
 
-const Comments =db.sequelize.define('Comments', {
+const Comments =db.sequelize.define('comments', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -10,12 +10,10 @@ const Comments =db.sequelize.define('Comments', {
     postedBy: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true
     },
     blogId: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true
     },
     comment: {
         type: DataTypes.STRING,
@@ -26,6 +24,7 @@ const Comments =db.sequelize.define('Comments', {
         defaultValue: false
     }
 },{
-    timestamps: false 
+    timestamps: false ,
+    tableName: 'comments' 
 });
 module.exports = Comments;

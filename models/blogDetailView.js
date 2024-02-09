@@ -1,14 +1,17 @@
 const { DataTypes } = require('sequelize');
 const db = require('../config');
 
-const Blog = db.sequelize.define('Blog', {
+const BlogDetailView = db.sequelize.define('blogdetailview', {
+ 
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true
+        allowNull: false
+        
     },
+
     title: {
-        type: DataTypes.STRING,     
+        type: DataTypes.STRING,
         allowNull: false
     },
     content: {
@@ -19,13 +22,13 @@ const Blog = db.sequelize.define('Blog', {
         type: DataTypes.STRING,
         defaultValue: false
     },
-    postedBy: {
-        type: DataTypes.INTEGER,
+    author: {
+        type: DataTypes.STRING,
         defaultValue: false
     }
-},{
+}, {
     timestamps: false,
-    tableName: 'blog' 
+    tableName: 'blogdetailview'
 });
 
-module.exports = Blog;
+module.exports = BlogDetailView;
